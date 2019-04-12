@@ -22,6 +22,14 @@ $(call inherit-product, build/target/product/embedded.mk)
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images
+
+# Encryption
+PRODUCT_PACKAGES += \
+    libcryptfs_hw
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=sdm660 \
     sys.usb.controller=a800000.dwc3 \
